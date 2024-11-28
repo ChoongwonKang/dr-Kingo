@@ -1,5 +1,5 @@
 ## Url loader module for dr Kingo
-## Class HAI5016 - by camphouse.me
+# HAI5016 - by camphouse.me
 
 import pandas as pd
 from loguru import logger
