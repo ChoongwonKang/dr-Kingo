@@ -2,7 +2,6 @@
 ## Class HAI5016 - by camphouse.me
 
 from loguru import logger
-
 from dotenv import load_dotenv
 import os
 
@@ -10,6 +9,7 @@ from sqlalchemy import create_engine, Column, Integer, String, MetaData, DateTim
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
+logger.debug(f"Loaded DATABASE_URL: {os.getenv('DATABASE_URL')}")
 
 logger.add("logs/database.log", rotation="10 MB")
 
@@ -93,3 +93,13 @@ if __name__ == "__main__":
     logger.info("Database module is being run directly, creating tables...")
     create_tables()
     logger.info("Tables created successfully.")
+
+# from dotenv import load_dotenv
+# import os
+
+# # .env 경로 명시
+# load_dotenv(dotenv_path="/workspaces/dr-Kingo/.env")
+
+# # DATABASE_URL 값 출력
+# database_url = os.getenv('DATABASE_URL')
+# print(f"DATABASE_URL: {database_url}")
